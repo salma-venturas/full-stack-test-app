@@ -1,18 +1,18 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { getRepositoryToken } from "@nestjs/typeorm";
-import { HomeDetail } from "./entities/home-detail.entity";
-import { HomeDetailController } from "./home-detail.controller";
-import { HomeDetailService } from "./home-detail.service";
+import { Detail } from "./entities/detail.entity";
+import { DetailController } from "./detail.controller";
+import { DetailService } from "./detail.service";
 
-describe("HomeDetailController", () => {
-  let homeDetailController: HomeDetailController;
+describe("DetailController", () => {
+  let homeDetailController: DetailController;
 
   const mockService = {
     create: jest.fn(),
     findOne: jest.fn(),
   };
 
-  const mockHomeDetailRepository = {
+  const mockDetailRepository = {
     create: jest.fn(),
     save: jest.fn(),
     findOne: jest.fn(),
@@ -20,18 +20,18 @@ describe("HomeDetailController", () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [HomeDetailController],
+      controllers: [DetailController],
       providers: [
-        { provide: HomeDetailService, useValue: mockService },
+        { provide: DetailService, useValue: mockService },
         {
-          provide: getRepositoryToken(HomeDetail),
-          useValue: mockHomeDetailRepository,
+          provide: getRepositoryToken(Detail),
+          useValue: mockDetailRepository,
         },
       ],
     }).compile();
 
     homeDetailController =
-      module.get<HomeDetailController>(HomeDetailController);
+      module.get<DetailController>(DetailController);
   });
 
   it("should create a data", () => {

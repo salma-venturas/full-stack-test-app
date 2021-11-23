@@ -2,7 +2,7 @@ import { Exclude, Expose } from 'class-transformer';
 import { IsNotEmpty } from 'class-validator';
 
 @Exclude()
-export class ResponseHomeDetailDto {
+export class CreateDetailDto {
   @Expose()
   @IsNotEmpty()
   title: string;

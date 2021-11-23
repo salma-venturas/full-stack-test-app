@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { HomeDetail } from './detail/entities/home-detail.entity';
-import { HomeDetailModule } from './detail/home-detail.module';
+import { Detail } from './detail/entities/detail.entity';
+import { DetailModule } from './detail/detail.module';
 
 @Module({
   imports: [
-    HomeDetailModule,
+    DetailModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -13,7 +13,7 @@ import { HomeDetailModule } from './detail/home-detail.module';
       username: 'root',
       password: 'root',
       database: 'test_db',
-      entities: [HomeDetail],
+      entities: [Detail],
       synchronize: true,
     }),
   ],

@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, IsNull } from 'typeorm';
 
-@Entity({ name: 'homedetail' })
-export class HomeDetail {
+@Entity({ name: 'detail' })
+export class Detail {
   @Column({ default: 1 })
   userId: number;
 

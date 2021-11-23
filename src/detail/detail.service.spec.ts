@@ -1,10 +1,10 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { getRepositoryToken } from "@nestjs/typeorm";
-import { HomeDetail } from "./entities/home-detail.entity";
-import { HomeDetailService } from "./home-detail.service";
+import { Detail } from "./entities/detail.entity";
+import { DetailService } from "./detail.service";
 
 describe("HomeDetailService", () => {
-  let service: HomeDetailService;
+  let service: DetailService;
   const mockHomeDetailRepository = {
     create: jest.fn(),
     save: jest.fn(),
@@ -14,15 +14,15 @@ describe("HomeDetailService", () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
-        HomeDetailService,
+        DetailService,
         {
-          provide: getRepositoryToken(HomeDetail),
+          provide: getRepositoryToken(Detail),
           useValue: mockHomeDetailRepository,
         },
       ],
     }).compile();
 
-    service = module.get<HomeDetailService>(HomeDetailService);
+    service = module.get<DetailService>(DetailService);
   });
 
   it("should be create a new data and return", async () => {
@@ -35,7 +35,7 @@ describe("HomeDetailService", () => {
         title: "qui est esse",
         body: "est rerum tempore",
       });
-    const data: HomeDetail = await service.create({
+    const data: Detail = await service.create({
       title: "qui est esse",
       body: "est rerum tempore",
     });

@@ -1,10 +1,10 @@
 import { EntityRepository, IsNull, Repository } from 'typeorm';
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { HomeDetail } from './entities/home-detail.entity';
-import { ResponseHomeDetailDto } from './dto/response-home-detail.dto';
+import { Detail } from './entities/detail.entity';
+import { ResponseDetailDto } from './dto/response-detail.dto';
 @Injectable()
-@EntityRepository(HomeDetail)
-export class HomeDetailRepository extends Repository<HomeDetail> {
+@EntityRepository(Detail)
+export class DetailRepository extends Repository<Detail> {
  
   async findOne(id) {
     try {
