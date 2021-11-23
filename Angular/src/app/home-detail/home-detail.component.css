@@ -1,0 +1,54 @@
+.container {
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  right: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container .content {
+  max-width: 600px;
+  text-align: center;
+}
+
+.content h2.header {
+  font-size: 2vw;
+  line-height: 1em;
+  position: relative;
+  text-align: left;
+}
+
+
+
+.content p {
+  font-size: 1.2em;
+  color: #0d0d0d;
+  text-align: justify;
+}
+
+.content .btns {
+  margin: 25px 0;
+  display: inline-flex;
+}
+
+.content .btns a {
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
+  border: 2px solid #69a6ce;
+  color: #69a6ce;
+  font-weight: 500;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.content .btns a:hover {
+  background: #69a6ce;
+  color: #fff;
+}
