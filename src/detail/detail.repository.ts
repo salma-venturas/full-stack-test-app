@@ -5,12 +5,4 @@ import { ResponseDetailDto } from './dto/response-detail.dto';
 @Injectable()
 @EntityRepository(Detail)
 export class DetailRepository extends Repository<Detail> {
- 
-  async findOne(id) {
-    try {
-      return await this.findOneOrFail(id);
-    } catch (error) {
-      throw new BadRequestException(error.message);
-    }
-  }
 }
